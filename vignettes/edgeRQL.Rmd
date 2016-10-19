@@ -74,9 +74,8 @@ This experimental design is summarized in the table below, where the basal and l
 The GEO and SRA identifiers for each RNA sample are also shown:
 
 ```{r sra}
-#targetsFile <- system.file("extdata", "targets.txt", package="edgeRQL")
-#targets <- read.delim(targetsFile, stringsAsFactors=FALSE)
-targets <- read.delim("../inst/extdata/targets.txt", stringsAsFactors=FALSE)
+targetsFile <- system.file("extdata", "targets.txt", package="edgeRQL")
+targets <- read.delim(targetsFile, stringsAsFactors=FALSE)
 targets
 ```
 The experiment can be viewed as a one-way layout with six groups.
