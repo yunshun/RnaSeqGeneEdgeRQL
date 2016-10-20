@@ -38,6 +38,8 @@ This article provides a detailed workflow for analyzing an RNA-seq study from th
 The article gives a complete analysis of RNA-seq data that were collected to study the effects of pregnancy and lactation on the luminal cell lineage in the mouse mammary gland [@fu2015egfmcl1]. 
 The pipeline uses the *Rsubread* package [@liao2013subread] for mapping reads and assigning them to genes, and the *edgeR* package [@robinson2010edger] for statistical analyses.
 
+A published version of this workflow, including reviewer reports and comments is available at [F1000Research](http://f1000research.com/articles/5-1438).
+
 RNA-seq analysis involves a number of steps, including read alignment, read summarization, differential expression and pathway analysis. 
 Here we use the Subread aligner [@liao2013subread] for mapping and featureCounts [@liao2014featurecounts] for assigning reads to genes.
 As well as being fast and efficient, these algorithms have the advantage of having native implementations as R functions in the *Rsubread* package. 
@@ -74,8 +76,9 @@ This experimental design is summarized in the table below, where the basal and l
 The GEO and SRA identifiers for each RNA sample are also shown:
 
 ```{r sra}
-targetsFile <- system.file("extdata", "targets.txt", package="edgeRQL")
-targets <- read.delim(targetsFile, stringsAsFactors=FALSE)
+#targetsFile <- system.file("extdata", "targets.txt", package="edgeRQL")
+#targets <- read.delim(targetsFile, stringsAsFactors=FALSE)
+targets <- read.delim("../inst/extdata/targets.txt", stringsAsFactors=FALSE)
 targets
 ```
 The experiment can be viewed as a one-way layout with six groups.
