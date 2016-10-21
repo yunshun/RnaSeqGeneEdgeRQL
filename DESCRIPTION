@@ -1,6 +1,6 @@
 Package: RnaSeqGeneEdgeRQL
 Title: Gene-level RNA-seq differential expression and pathway analysis using Rsubread and the edgeR quasi-likelihood pipeline 
-Version: 1.00.0
+Version: 0.99.1
 Date: 2016-10-20
 Author: Yunshun Chen <yuchen@wehi.edu.au>, Aaron Lun <alun@wehi.edu.au>, Gordon Smyth <smyth@wehi.edu.au>
 Maintainer: Yunshun Chen <yuchen@wehi.edu.au>
