@@ -1,2 +1,2 @@
-# edgeRQL
-edgeR Quasi-likelihood workflow
+# RnaSeqGeneEdgeRQL
+RNA-seq edgeR Quasi-likelihood workflow
