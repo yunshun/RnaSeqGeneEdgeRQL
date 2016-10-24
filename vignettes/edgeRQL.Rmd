@@ -427,7 +427,7 @@ Here we test whether the differential expression fold changes are significantly 
 tr <- glmTreat(fit, contrast=B.LvsP, lfc=log2(1.5))
 topTags(tr)
 ```
-Note that the argument \code{lfc} is an abbreviation for “log-fold-change”.
+Note that the argument \code{lfc} is an abbreviation for Â“log-fold-changeÂ”.
 About 1100 genes are detected as DE with a FC significantly above 1.5 at an FDR cut-off of 5%.
 
 
@@ -917,7 +917,7 @@ Acknowledgments {#acknowledgments .unnumbered}
 The authors thank Wei Shi and Yang Liao for advice with *Rsubread* and Yifang Hu for creating the mouse version of the MSigDB.
 We also wish to acknowledge the early developers of the quasi-likelihood testing approach.
 Davis McCarthy authored the first versions of the quasi-likelihood functions in *edgeR* in February 2011 and Steve Lund and Dan Nettleton worked independently on *QuasiSeq* around the same time.
-We thank Steve Lund and Dan Nettleton for a valuable and enjoyable collaboration that lead to Lund et al [@lund2012quasiseq].
+We thank Steve Lund and Dan Nettleton for a valuable and enjoyable collaboration that lead to Lund et al [@lund2012quasiseq]. 
 
 
 
