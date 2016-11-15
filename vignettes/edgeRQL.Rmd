@@ -38,6 +38,8 @@ This article provides a detailed workflow for analyzing an RNA-seq study from th
 The article gives a complete analysis of RNA-seq data that were collected to study the effects of pregnancy and lactation on the luminal cell lineage in the mouse mammary gland [@fu2015egfmcl1]. 
 The pipeline uses the *Rsubread* package [@liao2013subread] for mapping reads and assigning them to genes, and the *edgeR* package [@robinson2010edger] for statistical analyses.
 
+A published version of this workflow, including reviewer reports and comments is available at [F1000Research](http://f1000research.com/articles/5-1438).
+
 RNA-seq analysis involves a number of steps, including read alignment, read summarization, differential expression and pathway analysis. 
 Here we use the Subread aligner [@liao2013subread] for mapping and featureCounts [@liao2014featurecounts] for assigning reads to genes.
 As well as being fast and efficient, these algorithms have the advantage of having native implementations as R functions in the *Rsubread* package. 
@@ -74,8 +76,9 @@ This experimental design is summarized in the table below, where the basal and l
 The GEO and SRA identifiers for each RNA sample are also shown:
 
 ```{r sra}
-targetsFile <- system.file("extdata", "targets.txt", package="RnaSeqGeneEdgeRQL")
-targets <- read.delim(targetsFile, stringsAsFactors=FALSE)
+#targetsFile <- system.file("extdata", "targets.txt", package="edgeRQL")
+#targets <- read.delim(targetsFile, stringsAsFactors=FALSE)
+targets <- read.delim("../inst/extdata/targets.txt", stringsAsFactors=FALSE)
 targets
 ```
 The experiment can be viewed as a one-way layout with six groups.
@@ -424,7 +427,7 @@ Here we test whether the differential expression fold changes are significantly 
 tr <- glmTreat(fit, contrast=B.LvsP, lfc=log2(1.5))
 topTags(tr)
 ```
-Note that the argument \code{lfc} is an abbreviation for “log-fold-change”.
+Note that the argument \code{lfc} is an abbreviation for Â“log-fold-changeÂ”.
 About 1100 genes are detected as DE with a FC significantly above 1.5 at an FDR cut-off of 5%.
 
 
@@ -914,7 +917,7 @@ Acknowledgments {#acknowledgments .unnumbered}
 The authors thank Wei Shi and Yang Liao for advice with *Rsubread* and Yifang Hu for creating the mouse version of the MSigDB.
 We also wish to acknowledge the early developers of the quasi-likelihood testing approach.
 Davis McCarthy authored the first versions of the quasi-likelihood functions in *edgeR* in February 2011 and Steve Lund and Dan Nettleton worked independently on *QuasiSeq* around the same time.
-We thank Steve Lund and Dan Nettleton for a valuable and enjoyable collaboration that lead to Lund et al [@lund2012quasiseq].
+We thank Steve Lund and Dan Nettleton for a valuable and enjoyable collaboration that lead to Lund et al [@lund2012quasiseq]. 
 
 
 
