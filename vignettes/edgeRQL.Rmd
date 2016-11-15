@@ -15,16 +15,6 @@ vignette: >
   %\VignetteEncoding{UTF-8}  
 ...
 
-```{r style, echo=FALSE, results='hide', message=FALSE}
-#library(BiocStyle)
-#library(knitr)
-#opts_chunk$set(error=FALSE, prompt=TRUE, comment=NA)
-#opts_chunk$set(fig.width=7, fig.height=7, out.width="3.5in", fig.align="center", fig.path="")
-#opts_chunk$set(dpi=300, dev="png", dev.args=list(pointsize=15))
-#options(width=83)
-#knit_hooks$set(plot = function(x, options))
-#knit_hooks$set(source = function(x, options) paste("<pre lang='r'>", x, "</pre>", sep = ""))
-```
 
 Introduction {#introduction .unnumbered}
 ============
@@ -76,7 +66,7 @@ This experimental design is summarized in the table below, where the basal and l
 The GEO and SRA identifiers for each RNA sample are also shown:
 
 ```{r sra}
-#targetsFile <- system.file("extdata", "targets.txt", package="edgeRQL")
+#targetsFile <- system.file("extdata", "targets.txt", package="RnaSeqGeneEdgeRQL")
 #targets <- read.delim(targetsFile, stringsAsFactors=FALSE)
 targets <- read.delim("../inst/extdata/targets.txt", stringsAsFactors=FALSE)
 targets
@@ -427,7 +417,7 @@ Here we test whether the differential expression fold changes are significantly 
 tr <- glmTreat(fit, contrast=B.LvsP, lfc=log2(1.5))
 topTags(tr)
 ```
-Note that the argument \code{lfc} is an abbreviation for Â“log-fold-changeÂ”.
+Note that the argument \code{lfc} is an abbreviation for “log-fold-change”.
 About 1100 genes are detected as DE with a FC significantly above 1.5 at an FDR cut-off of 5%.
 
 
@@ -917,7 +907,7 @@ Acknowledgments {#acknowledgments .unnumbered}
 The authors thank Wei Shi and Yang Liao for advice with *Rsubread* and Yifang Hu for creating the mouse version of the MSigDB.
 We also wish to acknowledge the early developers of the quasi-likelihood testing approach.
 Davis McCarthy authored the first versions of the quasi-likelihood functions in *edgeR* in February 2011 and Steve Lund and Dan Nettleton worked independently on *QuasiSeq* around the same time.
-We thank Steve Lund and Dan Nettleton for a valuable and enjoyable collaboration that lead to Lund et al [@lund2012quasiseq]. 
+We thank Steve Lund and Dan Nettleton for a valuable and enjoyable collaboration that lead to Lund et al [@lund2012quasiseq].
 
 
 
