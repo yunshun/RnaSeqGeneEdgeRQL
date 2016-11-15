@@ -15,6 +15,16 @@ vignette: >
   %\VignetteEncoding{UTF-8}  
 ...
 
+```{r style, echo=FALSE, results='hide', message=FALSE}
+#library(BiocStyle)
+#library(knitr)
+#opts_chunk$set(error=FALSE, prompt=TRUE, comment=NA)
+#opts_chunk$set(fig.width=7, fig.height=7, out.width="3.5in", fig.align="center", fig.path="")
+#opts_chunk$set(dpi=300, dev="png", dev.args=list(pointsize=15))
+#options(width=83)
+#knit_hooks$set(plot = function(x, options))
+#knit_hooks$set(source = function(x, options) paste("<pre lang='r'>", x, "</pre>", sep = ""))
+```
 
 Introduction {#introduction .unnumbered}
 ============
@@ -27,8 +37,6 @@ Changes in expression can then be associated with differences in biology, provid
 This article provides a detailed workflow for analyzing an RNA-seq study from the raw reads through to differential expression and pathway analysis using Bioconductor packages [@huber2015orchestrating]. 
 The article gives a complete analysis of RNA-seq data that were collected to study the effects of pregnancy and lactation on the luminal cell lineage in the mouse mammary gland [@fu2015egfmcl1]. 
 The pipeline uses the *Rsubread* package [@liao2013subread] for mapping reads and assigning them to genes, and the *edgeR* package [@robinson2010edger] for statistical analyses.
-
-A published version of this workflow, including reviewer reports and comments is available at [F1000Research](http://f1000research.com/articles/5-1438).
 
 RNA-seq analysis involves a number of steps, including read alignment, read summarization, differential expression and pathway analysis. 
 Here we use the Subread aligner [@liao2013subread] for mapping and featureCounts [@liao2014featurecounts] for assigning reads to genes.
