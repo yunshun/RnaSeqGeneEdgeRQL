@@ -66,6 +66,7 @@ This experimental design is summarized in the table below, where the basal and l
 The GEO and SRA identifiers for each RNA sample are also shown:
 
 ```{r sra}
+library(RnaSeqGeneEdgeRQL)
 targetsFile <- system.file("extdata", "targets.txt", package="RnaSeqGeneEdgeRQL")
 targets <- read.delim(targetsFile, stringsAsFactors=FALSE)
 targets
@@ -103,7 +104,7 @@ if( !file.exists("GSE60450_Lactation-GenewiseCounts.txt.gz") ) {
 FileURL <- paste(
   "http://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE60450",
   "format=file",
-  "file=GSE60450_Lactation-GenewiseCounts.txt.gz",
+  "file=GSE60450%5FLactation%2DGenewiseCounts%2Etxt%2Egz",
   sep="&")
 download.file(FileURL, "GSE60450_Lactation-GenewiseCounts.txt.gz")
 }
@@ -416,7 +417,7 @@ Here we test whether the differential expression fold changes are significantly 
 tr <- glmTreat(fit, contrast=B.LvsP, lfc=log2(1.5))
 topTags(tr)
 ```
-Note that the argument \code{lfc} is an abbreviation for “log-fold-change”.
+Note that the argument \code{lfc} is an abbreviation for ``log-fold-change".
 About 1100 genes are detected as DE with a FC significantly above 1.5 at an FDR cut-off of 5%.
 
 
