@@ -106,7 +106,7 @@ FileURL <- paste(
   "format=file",
   "file=GSE60450_Lactation-GenewiseCounts.txt.gz",
   sep="&")
-download.file(FileURL, method="internal", "GSE60450_Lactation-GenewiseCounts.txt.gz")
+download.file(FileURL, method="libcurl", "GSE60450_Lactation-GenewiseCounts.txt.gz")
 }
 ```
 
