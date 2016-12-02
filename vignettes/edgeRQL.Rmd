@@ -104,9 +104,9 @@ if( !file.exists("GSE60450_Lactation-GenewiseCounts.txt.gz") ) {
 FileURL <- paste(
   "http://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE60450",
   "format=file",
-  "file=GSE60450%5FLactation%2DGenewiseCounts%2Etxt%2Egz",
+  "file=GSE60450_Lactation-GenewiseCounts.txt.gz",
   sep="&")
-download.file(FileURL, "GSE60450_Lactation-GenewiseCounts.txt.gz")
+download.file(FileURL, method="wget", "GSE60450_Lactation-GenewiseCounts.txt.gz")
 }
 ```
 
