@@ -9,6 +9,6 @@ Depends: R (>= 3.3.0), edgeR, gplots, org.Mm.eg.db, GO.db
 License: Artistic-2.0
 VignetteBuilder: knitr
 biocViews: WorkflowStep
-Suggests: knitr, knitcitations
+Suggests: knitr, knitcitations, rmarkdown
 NeedsCompilation: no
 URL: http://f1000research.com/articles/5-1438/v2
